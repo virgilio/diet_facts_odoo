@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+
+        <record id="product_template_diet_facts_form_view" model="ir.ui.view">
+            <field name="name">diet_facts.product.template.product.form</field>
+            <field name="model">diet_facts.nutrition_facts</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="8"/>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="name">Product Template with
+                        Diet Facts Advanced
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page name="nutrition_facts" string="Nutrition Facts">
+                        <field name="nutrients"
+                               groups="base.group_user"
+                               options="{'no_create': True}"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="diet_facts.list">
+            <field name="name">Nutrient List</field>
+            <field name="model">diet_facts.nutrient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="diet_facts.action_window">
+            <field name="name">Diet Facts</field>
+            <field name="res_model">diet_facts.nutrition_facts</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window"
+                id="diet_facts.nutrient_action_window">
+            <field name="name">Nutrients</field>
+            <field name="res_model">diet_facts.nutrient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -
+        <record model="ir.actions.server" id="diet_facts.action_server">
+          <field name="name">Diet Facts server</field>
+          <field name="model_id" ref="model_diet_facts_diet_facts"/>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>-->
+
+        <!-- Top menu item -->
+
+        <menuitem name="Diet Facts Advanced" id="diet_facts.menu_root"
+                  action="diet_facts.action_window"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Nutrients" id="diet_facts.menu_nutrients"
+                  parent="diet_facts.menu_root"/>
+
+        <menuitem name="Nutrients List" id="diet_facts.menu_nutrients"
+                  parent="diet_facts.menu_root"
+                  action="diet_facts.nutrient_action_window"/>
+
+        <menuitem name="Products" id="diet_facts.menu_products"
+                  parent="diet_facts.menu_root"
+                  action="diet_facts.action_window"/>
+
+        <!--
+        <menuitem name="Menu 2" id="diet_facts.menu_2" parent="diet_facts.menu_root"/>
+        -->
+        <!-- actions -->
+
+        <!--<menuitem name="List" id="diet_facts.menu_1_list" parent="diet_facts.menu_1"
+                  action="diet_facts.action_window"/>-->
+        <!--
+        <menuitem name="Server to list" id="diet_facts" parent="diet_facts.menu_2"
+                  action="diet_facts.action_server"/>
+        -->
+    </data>
+</odoo>

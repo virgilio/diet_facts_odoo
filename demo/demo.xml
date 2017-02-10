@@ -1,0 +1,52 @@
+<odoo>
+    <data noupdate="1">
+        <record id="nutrient0" model="diet_facts.nutrient">
+            <field name="name">Calories</field>
+        </record>
+        <record id="nutrient1" model="diet_facts.nutrient">
+            <field name="name">Total Fat</field>
+        </record>
+        <record id="nutrient2" model="diet_facts.nutrient">
+            <field name="name">Saturated Fat</field>
+        </record>
+        <record id="nutrient3" model="diet_facts.nutrient">
+            <field name="name">Trans Fat</field>
+        </record>
+        <record id="nutrient4" model="diet_facts.nutrient">
+            <field name="name">Cholesterol</field>
+        </record>
+        <record id="nutrient5" model="diet_facts.nutrient">
+            <field name="name">Sodium</field>
+        </record>
+        <record id="nutrient6" model="diet_facts.nutrient">
+            <field name="name">Total Carbohydrate</field>
+        </record>
+        <record id="nutrient7" model="diet_facts.nutrient">
+            <field name="name">Dietary Fiber</field>
+        </record>
+        <record id="nutrient8" model="diet_facts.nutrient">
+            <field name="name">Sugars</field>
+        </record>
+        <record id="nutrient9" model="diet_facts.nutrient">
+            <field name="name">Protein</field>
+        </record>
+        <record id="nutrient10" model="diet_facts.nutrient">
+            <field name="name">Vitamin A</field>
+        </record>
+        <record id="nutrient11" model="diet_facts.nutrient">
+            <field name="name">Vitamin C</field>
+        </record>
+        <record id="nutrient12" model="diet_facts.nutrient">
+            <field name="name">Calcium</field>
+        </record>
+        <record id="nutrient13" model="diet_facts.nutrient">
+            <field name="name">Iron</field>
+        </record>
+        <record id="nutrient14" model="diet_facts.nutrient">
+            <field name="name">Iron</field>
+        </record>
+        <record id="nutrient15" model="diet_facts.nutrient">
+            <field name="name">Phosphorus</field>
+        </record>
+    </data>
+</odoo>
