@@ -18,23 +18,20 @@
                     <page name="nutrition_facts" string="Nutrition Facts">
                         <field name="nutrients"
                                groups="base.group_user"
-                               options="{'no_create': True}"/>
+                               widget="one2many_list"
+                               options="{'no_create': False}">
+                            <tree editable="bottom" string="Diet Facts">
+                                <field name="parent_id" />
+                                <field name="nutrient_id" />
+                                <field name="amount" class="oe_inline" />
+                                <field name="unit_of_measure" class="oe_inline" />
+                            </tree>
+                        </field>
                     </page>
                 </xpath>
             </field>
         </record>
         <!-- explicit list view definition -->
-
-        <record model="ir.ui.view" id="diet_facts.list">
-            <field name="name">Nutrient List</field>
-            <field name="model">diet_facts.nutrient</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                </tree>
-            </field>
-        </record>
-
 
         <!-- actions opening views on models -->
         <record model="ir.actions.act_window" id="diet_facts.action_window">
